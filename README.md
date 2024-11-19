@@ -28,7 +28,7 @@ func main() {
 
 ```
 
-Output:
+**Output**:
 ```shell
 这是的一个新的错误:hello world
 stack trace:
@@ -54,7 +54,7 @@ func main() {
 
 ```
 
-Output:
+**Output**:
 ```shell
 原生golang的错误类型
 stack trace:
@@ -80,7 +80,7 @@ func main() {
     
 ```
 
-Output:
+**Output**:
 ```shell
 panic: 这是一个panic错误:hello world
 stack trace:
@@ -108,7 +108,7 @@ func main() {
 
 ```
 
-Output:
+**Output**:
 ```shell
 panic: 这是一个panic错误:hello world
 stack trace:
@@ -125,7 +125,7 @@ ___
 go test -gcflags=all=-l -cover -v .
 ```
 
-Output:
+**Output**:
 ```shell
 === RUN   TestNew
 
