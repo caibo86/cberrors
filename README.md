@@ -118,3 +118,90 @@ stack trace:
         file = /usr/local/go/src/runtime/proc.go, line = 267
         file = /usr/local/go/src/runtime/asm_amd64.s, line = 1650
 ```
+
+## Run Tests
+___
+```shell
+go test -gcflags=all=-l -cover -v .
+```
+
+Output:
+```shell
+=== RUN   TestNew
+
+  创建错误 
+     正常创建 ✔
+
+
+1 total assertion
+
+--- PASS: TestNew (0.00s)
+=== RUN   TestPanic
+
+  Panic 
+    输入格式化错误信息并panic ✔✔✔
+
+
+4 total assertions
+
+--- PASS: TestPanic (0.00s)
+=== RUN   TestPanicWrap
+
+  PanicWrap 
+    使用已有错误并调用到panic ✔✔✔
+
+
+7 total assertions
+
+--- PASS: TestPanicWrap (0.00s)
+=== RUN   TestWrap
+
+  包装已有错误 
+    正常返回 ✔
+
+
+8 total assertions
+
+--- PASS: TestWrap (0.00s)
+=== RUN   Test_errorHost_Error
+
+  返回输出错误信息 
+    正常返回 
+      无错误信息 ✔
+      有错误信息 ✔
+
+
+10 total assertions
+
+--- PASS: Test_errorHost_Error (0.00s)
+=== RUN   Test_errorHost_Stack
+
+  返回栈信息 
+    正常返回 ✔
+
+
+11 total assertions
+
+--- PASS: Test_errorHost_Stack (0.00s)
+=== RUN   Test_errorHost_String
+
+  返回错误输出 
+    正常返回 ✔✔
+
+
+13 total assertions
+
+--- PASS: Test_errorHost_String (0.00s)
+=== RUN   Test_stack
+
+  获取堆栈信息 
+    正常获取 ✔
+
+
+14 total assertions
+
+--- PASS: Test_stack (0.00s)
+PASS
+coverage: 100.0% of statements
+ok  	github.com/caibo86/cberrors	(cached)	coverage: 100.0% of statements
+```
